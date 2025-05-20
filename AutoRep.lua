@@ -40,7 +40,7 @@ function sampev.onTogglePlayerSpectating(state)
     if state then
         if active then
             active = false
-            sampAddChatMessage('{7ee5b1}[AutoRep]{ffffff} Вы зашли в рекон. Автоловля автоматически отключена!', 0xffffff)
+            sampAddChatMessage('{7ee5b1}[AutoRep]{ffffff} Вы зашли в рекон. Автоловля автоматически {FF0000}отключена!', 0xffffff)
         end
     end
 end
@@ -56,12 +56,12 @@ function main()
         for key, text in pairs(list) do
             if wasKeyPressed(key) and not sampIsCursorActive() then
                 active = not active
-                sampAddChatMessage(active and '{7ee5b1}[AutoRep]{ffffff} Автоловля включена!' or '{7ee5b1}[AutoRep]{ffffff} Автоловля выключена!', 0xffffff)
+                sampAddChatMessage(active and '{7ee5b1}[AutoRep]{ffffff} Автоловля {008000}включена{ffffff}!' or '{7ee5b1}[AutoRep]{ffffff} Автоловля {FF0000}выключена{ffffff}!', 0xffffff)
             end
         end
         if active then
             sampSendChat('/ot')
-            wait(250)
+            wait(180)
         end
     end
 end
